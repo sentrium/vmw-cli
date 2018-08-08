@@ -77,7 +77,6 @@ function myVmw(opt) {
 		console.log('Pulling landing index.json [' + base + ']');
 		// change to a promise that resolves to index
 		return request.get({url}).then(function(data) {
-			fs.writeFileSync(dir + 'index.json', data, 'utf8');
 			return JSON.parse(data);
 		});
 	};

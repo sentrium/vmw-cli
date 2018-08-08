@@ -1,0 +1,218 @@
+{
+	"width": 211,
+	"stdout": [
+		[
+			0.000161,
+			"[root@obpc ~]# "
+		],
+		[
+			0.822632,
+			"v"
+		],
+		[
+			0.078802,
+			"m"
+		],
+		[
+			0.084531,
+			"w"
+		],
+		[
+			0.152547,
+			"-"
+		],
+		[
+			0.123055,
+			"c"
+		],
+		[
+			0.159639,
+			"l"
+		],
+		[
+			0.062412,
+			"i"
+		],
+		[
+			0.445035,
+			" "
+		],
+		[
+			0.13959,
+			"f"
+		],
+		[
+			0.09472,
+			"i"
+		],
+		[
+			0.054478,
+			"n"
+		],
+		[
+			0.123794,
+			"d"
+		],
+		[
+			0.144568,
+			" "
+		],
+		[
+			0.259543,
+			"n"
+		],
+		[
+			0.140492,
+			"e"
+		],
+		[
+			0.070725,
+			"t"
+		],
+		[
+			0.16425,
+			"w"
+		],
+		[
+			0.1125,
+			"o"
+		],
+		[
+			0.116195,
+			"r"
+		],
+		[
+			0.08678,
+			"k"
+		],
+		[
+			0.222409,
+			"-"
+		],
+		[
+			0.243758,
+			"i"
+		],
+		[
+			0.062858,
+			"n"
+		],
+		[
+			0.163229,
+			"s"
+		],
+		[
+			0.127821,
+			"i"
+		],
+		[
+			0.140893,
+			"g"
+		],
+		[
+			0.118146,
+			"h"
+		],
+		[
+			0.093389,
+			"t"
+		],
+		[
+			0.160003,
+			"\r\n"
+		],
+		[
+			0.234269,
+			"Index [allGroups.json] not found - downloading...\r\n"
+		],
+		[
+			2.409521,
+			"\u001b[1G[https://raw.githubusercontent.com/apnex/myvmw2/master/index/allGroups.json] downloading... [==============================================>   ] 93% 0.0s 1863 KB/s 933.02/998.98 KB"
+		],
+		[
+			0.000421,
+			"\u001b[0K"
+		],
+		[
+			0.045243,
+			"\u001b[1G[https://raw.githubusercontent.com/apnex/myvmw2/master/index/allGroups.json] downloading... [=================================================>] 100% 0.0s 1829 KB/s 998.98/998.98 KB\u001b[0K"
+		],
+		[
+			0.000351,
+			"\r\n"
+		],
+		[
+			0.090784,
+			"solution                            productGroup  productType       version  fileName                                                             fileDate    fileSize  fileType  \r\n----------------------------------  ------------  ----------------  -------  -------------------------------------------------------------------  ----------  --------  --------  \r\n"
+		],
+		[
+			0.000145,
+			"vmware-nsx-data-center-for-vsphere  VRNI-380      Product Binaries  3.8.0    VMware-vRealize-Network-Insight-3.8.0.1528874037-platform.ova        2018-06-19  3.86 GB   ova       \r\n"
+		],
+		[
+			1.7e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-380      Product Binaries  3.8.0    VMware-vRealize-Network-Insight-3.8.0.1528874037-proxy.ova           2018-06-19  4.11 GB   ova       \r\n"
+		],
+		[
+			2.3e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-380      Product Binaries  3.8.0    VMware-vRealize-Network-Insight.3.8.0.1528874037.upgrade.bundle      2018-06-19  3.97 GB   bundle    \r\n"
+		],
+		[
+			2.8e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-380-OSS  Open Source       3.8.0    VMware-vRealize-Network-Insight-3.8.0-ODP.tar.gz                     2018-06-19  2.04 GB   gz        \r\n"
+		],
+		[
+			1.7e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-370-OSS  Open Source       3.7.0    VMware-vRealize-Network-Insight-3.7.0-ODP.tar.gz                     2018-02-22  2.07 GB   gz        \r\n"
+		],
+		[
+			2e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-350-OSS  Open Source       3.5.0    VMware-vRealize-Network-Insight-open-source-3.5.0-1502978926.tar.gz  2017-09-05  2.05 GB   gz        \r\n"
+		],
+		[
+			2.4e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-360-OSS  Open Source       3.6.0    VMware-vRealize-Network-Insight-Open-Source-License-3.6.0-GA.txt     2017-11-14  6.41 MB   txt       \r\n"
+		],
+		[
+			1.4e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-360-OSS  Open Source       3.6.0    VMware-vRealize-Network-Insight-Open-Source-3.6.0-1509991432.tar.gz  2017-11-14  2.04 GB   gz        \r\n"
+		],
+		[
+			2.1e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-330-OSS  Open Source       3.3.0    open_source_license_vRealize-Network-Insight-3.3.0-GA.txt            2017-03-02  6.60 MB   txt       \r\n"
+		],
+		[
+			2.1e-05,
+			"vmware-nsx-data-center-for-vsphere  VRNI-330-OSS  Open Source       3.3.0    VMware-vRealize-Network-Insight-3.3.0-1487914671.tar.gz              2017-03-02  1.96 GB   gz        \r\n"
+		],
+		[
+			0.000107,
+			"[ 10/5435 ] entries - filter [ fileName:network-insight ]\r\n"
+		],
+		[
+			1.7e-05,
+			"Terminal size: 211x52\r\n"
+		],
+		[
+			0.041842,
+			"\u001b]777;notify;Command completed;vmw-cli find network-insight\u0007\u001b]0;apnex@obpc:/home/apnex/vmware/lab/nuc/docker/git/vmw-cli/asciicast\u0007\u001b]7;file://obpc/home/apnex/vmware/lab/nuc/docker/git/vmw-cli/asciicast\u0007"
+		],
+		[
+			0.1,
+			"[root@obpc ~]# \r\n"
+		],
+		[
+			5,
+			""
+		]
+	],
+	"duration": 10.035343,
+	"height": 52,
+	"version": 1,
+	"title": null,
+	"command": null,
+	"env": {
+		"TERM": "xterm-256color",
+		"SHELL": "/bin/bash"
+	}
+}

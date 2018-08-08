@@ -1,0 +1,282 @@
+{
+	"command": null,
+	"env": {
+		"SHELL": "/bin/bash",
+		"TERM": "xterm-256color"
+	},
+	"width": 211,
+	"duration": 7.64542,
+	"height": 52,
+	"title": null,
+	"version": 1,
+	"stdout": [
+		[
+			0.00019,
+			"[root@obpc ~]# "
+		],
+		[
+			0.863812,
+			"n"
+		],
+		[
+			0.214447,
+			"p"
+		],
+		[
+			0.085668,
+			"m"
+		],
+		[
+			0.238187,
+			" "
+		],
+		[
+			0.164436,
+			"i"
+		],
+		[
+			0.054387,
+			"n"
+		],
+		[
+			0.06019,
+			"s"
+		],
+		[
+			0.078927,
+			"t"
+		],
+		[
+			0.19471,
+			"a"
+		],
+		[
+			0.129038,
+			"l"
+		],
+		[
+			0.133796,
+			"l"
+		],
+		[
+			0.166611,
+			" "
+		],
+		[
+			0.258941,
+			"v"
+		],
+		[
+			0.134253,
+			"m"
+		],
+		[
+			0.19571,
+			"w"
+		],
+		[
+			0.168931,
+			"-"
+		],
+		[
+			0.413639,
+			"c"
+		],
+		[
+			0.127969,
+			"l"
+		],
+		[
+			0.094367,
+			"i"
+		],
+		[
+			0.588453,
+			" "
+		],
+		[
+			0.229283,
+			"-"
+		],
+		[
+			0.125726,
+			"-"
+		],
+		[
+			0.147563,
+			"g"
+		],
+		[
+			0.079731,
+			"l"
+		],
+		[
+			0.149328,
+			"o"
+		],
+		[
+			0.164413,
+			"b"
+		],
+		[
+			0.148329,
+			"a"
+		],
+		[
+			0.1526,
+			"l"
+		],
+		[
+			0.118361,
+			"\r\n"
+		],
+		[
+			0.404371,
+			"\u001b[?25l"
+		],
+		[
+			0.002952,
+			"[\u001b[90m..................\u001b[0m] / rollbackFailedOptional: \u001b[34;40mverb\u001b[0m \u001b[35mnpm-session\u001b[0m d5ec2a3fb5d5358b\u001b[0m\u001b[K\r"
+		],
+		[
+			0.113947,
+			"[\u001b[90m..................\u001b[0m] / rollbackFailedOptional: \u001b[34;40mverb\u001b[0m \u001b[35mnpm-session\u001b[0m d5ec2a3fb5d5358b\u001b[0m\u001b[K\r"
+		],
+		[
+			0.049786,
+			"[\u001b[90m..................\u001b[0m] / fetchMetadata: \u001b[7msill\u001b[0m \u001b[35mresolveWithNewModule\u001b[0m vmw-cli@1.0.6 checking installable status\u001b[0m\u001b[K\r"
+		],
+		[
+			0.052089,
+			"[\u001b[90m..................\u001b[0m] \\ fetchMetadata: \u001b[7msill\u001b[0m \u001b[35mresolveWithNewModule\u001b[0m symbol-observable@1.2.0 checking installable status\u001b[0m\u001b[K\r"
+		],
+		[
+			0.057489,
+			"[\u001b[7m  \u001b[27m\u001b[90m................\u001b[0m] \\ fetchMetadata: \u001b[7msill\u001b[0m \u001b[35mresolveWithNewModule\u001b[0m prepend-http@2.0.0 checking installable status\u001b[0m\u001b[K\r"
+		],
+		[
+			0.049834,
+			"[\u001b[7m  \u001b[27m\u001b[90m................\u001b[0m] | fetchMetadata: \u001b[7msill\u001b[0m \u001b[35mresolveWithNewModule\u001b[0m prepend-http@2.0.0 checking installable status\u001b[0m\u001b[K\r"
+		],
+		[
+			0.051406,
+			"[\u001b[7m  \u001b[27m\u001b[90m................\u001b[0m] - fetchMetadata: \u001b[7msill\u001b[0m \u001b[35mresolveWithNewModule\u001b[0m co@4.6.0 checking installable status\u001b[0m\u001b[K\r"
+		],
+		[
+			0.055366,
+			"[\u001b[7m  \u001b[27m\u001b[90m................\u001b[0m] \\ fetchMetadata: \u001b[7msill\u001b[0m \u001b[35mresolveWithNewModule\u001b[0m bcrypt-pbkdf@1.0.2 checking installable status\u001b[0m\u001b[K\r"
+		],
+		[
+			0.027757,
+			"\r\u001b[K\u001b[?25h"
+		],
+		[
+			0.000138,
+			"\u001b[37;40mnpm\u001b[0m"
+		],
+		[
+			3.6e-05,
+			" \u001b[0m"
+		],
+		[
+			3.3e-05,
+			"\u001b[30;43mWARN\u001b[0m"
+		],
+		[
+			2e-05,
+			" \u001b[0m"
+		],
+		[
+			1.9e-05,
+			"\u001b[35mdeprecated\u001b[0m"
+		],
+		[
+			1.8e-05,
+			" tough-cookie@0.12.1: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130\r\n\u001b[0m"
+		],
+		[
+			0.035969,
+			"\u001b[?25l"
+		],
+		[
+			0.00039,
+			"[\u001b[7m      \u001b[27m\u001b[90m............\u001b[0m] - diffTrees: \u001b[7msill\u001b[0m \u001b[35minstall\u001b[0m generateActionsToTake\u001b[0m\u001b[K\r"
+		],
+		[
+			0.051713,
+			"[\u001b[7m       \u001b[27m\u001b[90m...........\u001b[0m] / extract:vmw-cli: \u001b[34;40mverb\u001b[0m \u001b[35mlock\u001b[0m using /root/.npm/_locks/staging-a072192f34a17023.lock for /usr/lib/node_modules/.staging\u001b[0m\u001b[K\r"
+		],
+		[
+			0.0978,
+			"[\u001b[7m       \u001b[27m\u001b[90m...........\u001b[0m] / extract:vmw-cli: \u001b[34;40mverb\u001b[0m \u001b[35mlock\u001b[0m using /root/.npm/_locks/staging-a072192f34a17023.lock for /usr/lib/node_modules/.staging\u001b[0m\u001b[K\r"
+		],
+		[
+			0.05184,
+			"[\u001b[7m        \u001b[27m\u001b[90m..........\u001b[0m] \\ extract:responselike: \u001b[7msill\u001b[0m \u001b[35mextract\u001b[0m tough-cookie@0.12.1\u001b[0m\u001b[K\r"
+		],
+		[
+			0.053931,
+			"[\u001b[7m         \u001b[27m\u001b[90m.........\u001b[0m] | extract:isstream: \u001b[7msill\u001b[0m \u001b[35mextract\u001b[0m isstream@~0.1.2 extracted to /usr/lib/node_modules/.staging/isstream-9c0f57c6 (217ms)\u001b[0m\u001b[K\r"
+		],
+		[
+			0.050927,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] - extract:json-schema: \u001b[7msill\u001b[0m \u001b[35mextract\u001b[0m json-schema@0.2.3 extracted to /usr/lib/node_modules/.staging/json-schema-c9f22f44 (270ms)\u001b[0m\u001b[K\r"
+		],
+		[
+			0.050055,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] / extract:ajv: \u001b[7msill\u001b[0m \u001b[35mextract\u001b[0m ajv@^5.1.0 extracted to /usr/lib/node_modules/.staging/ajv-cde3d49f (314ms)\u001b[0m\u001b[K\r"
+		],
+		[
+			0.049957,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] / extract:ajv: \u001b[7msill\u001b[0m \u001b[35mextract\u001b[0m ajv@^5.1.0 extracted to /usr/lib/node_modules/.staging/ajv-cde3d49f (314ms)\u001b[0m\u001b[K\r"
+		],
+		[
+			0.050284,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] / finalize:http-cache-semantics: \u001b[7msill\u001b[0m \u001b[35mfinalize\u001b[0m /usr/lib/node_modules/vmw-cli/node_modules/http-cache-semantics\u001b[0m\u001b[K\r"
+		],
+		[
+			0.055002,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] - refresh-package-json:vmw-cli: \u001b[32;40mtiming\u001b[0m \u001b[35maction:finalize\u001b[0m Completed in 48ms\u001b[0m\u001b[K\r"
+		],
+		[
+			0.057008,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] - refresh-package-json:vmw-cli: \u001b[32;40mtiming\u001b[0m \u001b[35maction:finalize\u001b[0m Completed in 48ms\u001b[0m\u001b[K\r"
+		],
+		[
+			0.050503,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] \\ refresh-package-json:tough-cookie: \u001b[7msill\u001b[0m \u001b[35mrefresh-package-json\u001b[0m /usr/lib/node_modules/vmw-cli/node_modules/safer-buffer\u001b[0m\u001b[K\r"
+		],
+		[
+			0.042588,
+			"\r\u001b[K\u001b[?25h"
+		],
+		[
+			0.000123,
+			"/usr/bin/vmw-cli -> /usr/lib/node_modules/vmw-cli/vmw-cli.js\r\n"
+		],
+		[
+			0.006216,
+			"\u001b[?25l"
+		],
+		[
+			0.000273,
+			"[\u001b[7m            \u001b[27m\u001b[90m......\u001b[0m] / install:lowercase-keys: \u001b[32minfo\u001b[0m \u001b[35mlifecycle\u001b[0m lowercase-keys@1.0.1~install: lowercase-keys@1.0.1\u001b[0m\u001b[K\r"
+		],
+		[
+			0.020276,
+			"\r\u001b[K\u001b[?25h"
+		],
+		[
+			3.1e-05,
+			"+ vmw-cli@1.0.6\r\nadded 75 packages from 72 contributors in 1.203s\r\n"
+		],
+		[
+			0.1,
+			"[root@obpc ~]# \r\n"
+		],
+		[
+			5,
+			""
+		]
+	]
+}
