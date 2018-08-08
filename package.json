@@ -1,6 +1,6 @@
 {
 	"name": "vmw-cli",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "CLI interface for my.vmware.com",
 	"license": "MIT",
 	"repository": "apnex/vmw-cli",
@@ -8,19 +8,13 @@
 		"name": "Andrew Obersnel"
 	},
 	"bin": {
-		"vmw-cli": "vmw-cli.js"
+		"vmw-cli": "./lib/vmw-cli.js"
 	},
 	"engines": {
 		"node": ">=8"
 	},
 	"files": [
-		"vmw-cli.js",
-		"getFile.js",
-		"getRepo.js",
-		"getIndex.js",
-		"utils.js",
-		"node-progress.js",
-		"xtable.js"
+		"/lib"
 	],
 	"keywords": [
 		"myvmw",
