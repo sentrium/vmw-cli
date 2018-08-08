@@ -64,7 +64,6 @@ function myVmw(opt) {
 		})
 	};
 	this.index = async function() {
-		console.log('HOWDY!: ' + __dirname);
 		var jar = rq.jar(new FileCookieStore(__dirname + '/cookies.json'));
 		request = rp.defaults({
 			'jar': jar

@@ -2,22 +2,14 @@
 var got = require('got');
 var fs = require('fs');
 var ProgressBar = require('./node-progress.js');
-var self = getNew.prototype;
+var self = getIndex.prototype;
 
 // constructor
-function getNew(opts) {
+function getIndex(opts) {
 	this.cache = {};
 	this.dir = __dirname;
 }
-module.exports = getNew;
-
-self.FormatNumberLength = function(num, length) {
-	var r = "" + num;
-	while(r.length < length) {
-		r = "0" + r;
-	}
-	return r;
-};
+module.exports = getIndex;
 
 self.getFile = async function(url) {
 	let options = {
@@ -38,6 +30,7 @@ self.getFile = async function(url) {
 		label++;
 		total = parseInt(total / 1000 * 100) / 100;
 	}
+	// work out bar format - time?
 	let bar = new ProgressBar('[' + url + '] downloading... [:bar] :percent :etas :Kbps KB/s :curr/' + self.pad(total) + ' ' + labels[label], {
 		complete: '=',
 		head: '>',
@@ -47,7 +40,7 @@ self.getFile = async function(url) {
 		total: totalBytes
 	});
 
-	// make request
+	// make and return request promise
 	return got(url)
 	.on('downloadProgress', progress => {
 		let rate = Math.round(bar.curr / ((new Date - bar.start) / 1000) / 1000);
@@ -75,9 +68,3 @@ self.pad = function(num) {
 		return left + '.' + m[2];
 	}
 };
-
-/*
-let client = new getNew();
-let url = 'https://raw.githubusercontent.com/apnex/myvmw2/master/index/allGroups.json';
-client.getFile(url);
-*/

@@ -1,6 +1,6 @@
 {
 	"name": "vmw-cli",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "CLI interface for my.vmware.com",
 	"license": "MIT",
 	"repository": "apnex/vmw-cli",
@@ -16,15 +16,17 @@
 	"files": [
 		"vmw-cli.js",
 		"getFile.js",
-		"getNew.js",
+		"getRepo.js",
+		"getIndex.js",
 		"utils.js",
 		"node-progress.js",
-		"vmwIndex.js",
 		"xtable.js"
 	],
 	"keywords": [
 		"myvmw",
 		"vmware",
+		"vmw-cli",
+		"vmw",
 		""
 	],
 	"dependencies": {

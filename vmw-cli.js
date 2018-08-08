@@ -2,10 +2,10 @@
 const args = process.argv;
 var fs = require('fs');
 var xtable = require('./xtable.js');
-var vmwFile = require('./getFile.js');
-const myVmw = require('./vmwIndex.js');
-const getNew = require('./getNew.js');
-const client = new getNew();
+var getFile = require('./getFile.js');
+const myVmw = require('./getIndex.js');
+const getRepo = require('./getRepo.js');
+const client = new getRepo();
 
 // if called from shell
 if(args[1].match(/vmw-cli/g)) {
@@ -17,23 +17,22 @@ if(args[1].match(/vmw-cli/g)) {
 			find(args[3]);
 		break;
 		case 'index':
-			load(args[3]);
+			index(args[3]);
 		break;
 		default:
 			console.log('No command specified [index, find, get]');
+			// improve help output
 	}
 }
 
-// find file and download
+// find file and download first entry
 function get(string) {
 	if(string) {
-		load().then((allGroups) => {
-			let table = new xtable({
-				data: parseData(allGroups)
-			});
-			table.filter(buildFilter(string));
+	        filter(string).then((table) => {
 			if(node = table.view[0]) { // download first entry only
-				let downloader = new vmwFile();
+				let downloader = new getFile({
+					dir: __dirname
+				});
 				downloader.dir = __dirname; // incorporate into opts
 				downloader.get(node.productGroup, node.fileName);
 			} else {
@@ -54,7 +53,6 @@ function parseData(data, name) {
 		let version = data[group]['version'];
 		let solution = data[group]['solution'];
 		for(let file in data[group]['files']) {
-			let node = data[group]['files'][file];
 			let record = Object.assign({
 				'productGroup':	group,
 				'productId':	productId,
@@ -62,7 +60,7 @@ function parseData(data, name) {
 				'productName':	productName,
 				'version':	version,
 				'solution':	solution
-			}, node);
+			}, data[group]['files'][file]);
 			result.push(record);
 		}
 	}
@@ -88,55 +86,55 @@ function load() {
 			});
 		} else {
 			console.log('Index [allGroups.json] found - local load...');
-			let allGroups = require(dataDir);
-			resolve(allGroups);
+			resolve(require(dataDir));
 		}
 	});
 }
 
 function find(string) {
 	// build, filter and output table
-	let cols = [
-		'solution',
-		'productGroup',
-		'productType',
-		//'productName',
-		'version',
-		'fileName',
-		'fileDate',
-		'fileSize',
-		'fileType'
-	];
-
-	//let allGroups = load();
-	load().then((allGroups) => {
-		let table = new xtable({
-			data: parseData(allGroups),
-			header: cols
-		});
-		table.filter(buildFilter(string));
+	filter(string).then((table) => {
+		let cols = [
+			'solution',
+			'productGroup',
+			'productType',
+			//'productName',
+			'version',
+			'fileName',
+			'fileDate',
+			'fileSize',
+			'fileType'
+		];
 		table.out(cols);
-		let filterString = '';
-		let comma = '';
-		for(let filter of table.filters) {
-			filterString += comma + filter.field + ':' + filter.value;
-			comma = ',';
-		}
-		console.log('[ ' + table.view.length + '/' + table.data.length + ' ] entries - filter [ ' + filterString + ' ]');
+		console.log('[ ' + table.view.length + '/' + table.data.length + ' ] entries - filter [ ' + table.filterString() + ' ]');
 		console.log('Terminal size: ' + process.stdout.columns + 'x' + process.stdout.rows);
 	});
 }
 
-function index() {
-	//use got to download allFiles
-	// build, filter and output table
-	let cols = [
-		'solution',
-		'productGroup',
-		'productType'
-	];
+function filter(string) {
+	// load index and filter table
+	return new Promise(function(resolve, reject) {
+		load().then((data) => {
+			let table = new xtable({
+				data: parseData(data)
+			});
+			table.filter(buildFilter(string));
+			resolve(table);
+		});
+	});
 }
 
+// force re-download index
+function index() {
+	console.log('Re-syncing index [allGroups.json] - downloading...');
+	let url = 'https://raw.githubusercontent.com/apnex/myvmw2/master/index/allGroups.json';
+	let dataDir = __dirname + '/allGroups.json';
+	client.getFile(url).then((response) => {
+		fs.writeFileSync(dataDir, response.body);
+	});
+}
+
+// parse and construct filter object
 function buildFilter(string) {
 	let filters = [];
 	var rgxFilter = new RegExp('([^,:]+):([^,:]*)', 'g');

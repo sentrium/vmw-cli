@@ -7,12 +7,22 @@ function xtable(opts) {
 	this.view = [];
 	this.data = opts.data;
 	this.header = opts.header;
-	this.filterString = "";
 	this.filters = [];
 }
 module.exports = xtable;
 
-self.out = function() {
+// stringify this.filters[];
+self.filterString = function() {
+	let string = '';
+	let comma = '';
+	for(let filter of this.filters) {
+		string += comma + filter.field + ':' + filter.value;
+		comma = ',';
+	}
+	return string;
+};
+
+self.out = function(cols) {
 	if(this.data) {
 		if(!this.header) {
 			// learn cols from first data record if no header defined
@@ -21,8 +31,11 @@ self.out = function() {
 				this.header.push(item);
 			}
 		}
+		if(!cols) {
+			cols = this.header;
+		}
 		var col = {};
-		for(let item of this.header) {
+		for(let item of cols) {
 			col[item] = item;
 		}
 		this.runColWidth(col);
@@ -39,7 +52,8 @@ self.out = function() {
 		let headString = '';
 		let dashString = '';
 		let spacer = ' ';
-		for(let item of this.header) {
+		//for(let item of this.header) {
+		for(let item of cols) {
 			headString += item + spacer.repeat(this.cache[item] - item.length + 2); // remove 2 space at end?
 			dashString += '-'.repeat(this.cache[item]) + spacer.repeat(2);
 		}
@@ -52,7 +66,7 @@ self.out = function() {
 		// build string data
 		for(let item of this.view) {
 			let dataString = '';
-			for(let col of this.header) {
+			for(let col of cols) {
 				if(item[col]) {
 					dataString += item[col] + spacer.repeat(this.cache[col] - item[col].length + 2);
 				} else {
