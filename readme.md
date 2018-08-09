@@ -1,6 +1,6 @@
 # vmw-cli
 
-## Configure authentication for my.vmware.com
+#### Configure authentication for my.vmware.com
 ```
 export VMWUSER=username
 export VMWPASS=password
