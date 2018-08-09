@@ -1,9 +1,11 @@
 # vmw-cli
 
+WARNING - not currently functioning - fix in progress
+
 #### Configure authentication for my.vmware.com
 ```
-export VMWUSER=<username>
-export VMWPASS=<password>
+export VMWUSER='<username>'
+export VMWPASS='<password>'
 ```
 
 ## Install
@@ -105,10 +107,8 @@ Pulling landing index.json [https://my.vmware.com/group/vmware/downloads]
 		"downloadFileId": "d0dd9006d720a26278b94591a4111457",
 		"vmware": "downloadBinary",
 		"baseStr": "",
-		"hashKey": "19fdaa3446e1f36e1da6e47fa45be1e4",
 		"tagId": "9610",
 		"productId": "745",
-		"uuId": "b138d672-596b-4eb9-84b0-233062c31acf"
 	}
 }
 [VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle] downloading... [=================================================>] 100% 0.0s 14393 KB/s 36.47/36.47 MB
