@@ -1,16 +1,24 @@
 # vmw-cli
 
+## Configure authentication for my.vmware.com
+```
+export VMWUSER=username
+export VMWPASS=password
+```
+
 ## Install
+`vmw-cli` can be installed natively via NPM or consumed using a pre-built docker image.
 
+#### via NPM
+After install - tool can be leveraged directly via `vmw-cli` command
 ```
-$ npm install --global vmw-cli
+npm install --global vmw-cli
 ```
 
-## Authentication for my.vmware.com
-
+#### via Docker
+Examples listed below would require this `docker run` command in front
 ```
-$ export VMWUSER=username
-$ export VMWPASS=password
+docker run -it -e VMWUSER -e VMWPASS ${PWD}:/files apnex/vmw-cli
 ```
 
 ## Examples
