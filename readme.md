@@ -1,7 +1,5 @@
 # vmw-cli
 
-WARNING - not currently functioning - fix in progress
-
 #### Configure authentication for my.vmware.com
 ```
 export VMWUSER='<username>'

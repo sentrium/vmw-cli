@@ -1,6 +1,6 @@
 {
 	"name": "vmw-cli",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"description": "CLI interface for my.vmware.com",
 	"license": "MIT",
 	"repository": "apnex/vmw-cli",
@@ -25,6 +25,7 @@
 	],
 	"dependencies": {
 		"got": "*",
+		"cheerio": "*",
 		"md5-file": "*",
 		"p-queue": "*",
 		"request": "*",
