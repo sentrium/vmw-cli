@@ -22,6 +22,72 @@ Examples listed below would require this `docker run` command in front
 docker run -t -e VMWUSER -e VMWPASS -v ${PWD}:/files apnex/vmw-cli
 ```
 
+## Usage
+#### vmw-cli list
+The `list` command displays the current high-level `<solutions>` available on my.vmware.com.  
+You will need to first generate an index of files under at least 1 solution before proceeding with other commands.  
+```
+$ vmw-cli list
+vmware-workstation-pro
+vmware-workstation-player
+vmware-workspace
+vmware-workspace-one
+vmware-vsphere
+vmware-vsphere-with-operations-management
+vmware-vsphere-storage-appliance
+vmware-vsphere-integrated-containers
+vmware-vsphere-hypervisor-esxi
+vmware-vsphere-data-protection-advanced
+vmware-vsan
+
+<output ommitted>
+
+vmware-photon-platform
+vmware-nsx-t-data-center
+vmware-nsx-sd-wan
+vmware-nsx-data-center-for-vsphere
+vmware-nsx-cloud
+vmware-integrated-openstack
+```
+
+#### vmw-cli index <solution>
+The `index` command creates an index of files available to you as `fileIndex.json`.  
+You will need to use one of the `<solution>` entries available from the `list` command.  
+The index intentionally creates duplicate entries for files, as a `product` may map to multiple `solutions`.  
+You can issue the `index` command multiple times to generate a consolidated index of all files.  
+
+**WARNING: Some solutions such as `vmware-vsphere` and `vmware-vsphere` contain a large number of products, and could take 10-15 mins to index**
+```
+$ vmw-cli index vmware-nsx-t-data-center
+Updating [fileIndex.json] for all permitted downloads from [vmware-nsx-t-data-center] ...
+file[/state/index.json.session] does not exist, writing...
+Synching delicious cookies from [https://my.vmware.com]
+Offering up afforementioned snacks as a sacrifice to [https://my.vmware.com/oam/server/auth_cred_submit]
+Pulling landing index.json [https://my.vmware.com/group/vmware/downloads]
+Resolving files in solution [vmware-nsx-t-data-center]
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-220&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-461-NSX&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRNI-380&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-221&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-220&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-214&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-213&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-212&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-2101&productId=673
+
+<output ommitted>
+
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-OSS&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-NSX&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110-OPENSTACK&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-OSS&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-400-OSS&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110-OSS&productId=631
+Merging [vmware-nsx-t-data-center] into [fileIndex.json] ...
+timer: 19227.940ms
+```
+
 ## Examples
 #### vmw-cli find lcp
 ```
