@@ -21,6 +21,7 @@
 		"vmware",
 		"vmw-cli",
 		"vmw",
+		"nodejs",
 		""
 	],
 	"dependencies": {
