@@ -13,13 +13,13 @@ Files will be downloaded to current directory.
 #### via NPM
 After install - tool can be leveraged directly via `vmw-cli` command
 ```
-npm install --global vmw-cli
+npm install vmw-cli --global
 ```
 
 #### via Docker
 Examples listed below would require this `docker run` command in front
 ```
-docker run -it -e VMWUSER -e VMWPASS -v ${PWD}:/files apnex/vmw-cli
+docker run -t -e VMWUSER -e VMWPASS -v ${PWD}:/files apnex/vmw-cli
 ```
 
 ## Examples
