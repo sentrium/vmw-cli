@@ -1,6 +1,6 @@
 {
 	"name": "vmw-cli",
-	"version": "1.0.12",
+	"version": "1.0.18",
 	"description": "CLI interface for my.vmware.com",
 	"license": "MIT",
 	"repository": "apnex/vmw-cli",
@@ -14,6 +14,7 @@
 		"node": ">=8"
 	},
 	"files": [
+		"npm-shrinkwrap.json",
 		"/lib"
 	],
 	"keywords": [
@@ -25,8 +26,8 @@
 		""
 	],
 	"dependencies": {
-		"got": "*",
 		"cheerio": "*",
+		"got": "*",
 		"md5-file": "*",
 		"p-queue": "*",
 		"request": "*",

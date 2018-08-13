@@ -1,0 +1,21 @@
+{
+	"name": "vmw-cli",
+	"lockfileVersion": 1,
+	"requires": true,
+	"dependencies": {
+		"tough-cookie-filestore": {
+			"version": "0.0.1",
+			"resolved": "https://registry.npmjs.org/tough-cookie-filestore/-/tough-cookie-filestore-0.0.1.tgz",
+			"integrity": "sha1-C/IwjtKTpQugcz7X1iiWAUhVcLY=",
+			"requires": {
+				"tough-cookie": "*"
+			},
+			"dependencies": {
+				"tough-cookie": {
+					"version": "*"
+				}
+			}
+		}
+	}
+}
+
