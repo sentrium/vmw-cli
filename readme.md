@@ -1,4 +1,6 @@
 # vmw-cli
+`vmw-cli` is a CLI client used to login and interact with my.vmware.com.  
+It provides an interface for programmatic query and download of VMware product binaries.  
 
 #### Configure authentication for my.vmware.com
 ```
@@ -8,10 +10,10 @@ export VMWPASS='<password>'
 
 ## Install
 `vmw-cli` can be installed natively via NPM or consumed using a pre-built docker image.
-Files will be downloaded to current directory.
+Requested files via the `get` command  will be downloaded to current directory.
 
 #### via NPM
-After install - tool can be leveraged directly via `vmw-cli` command
+Once installed, `vmw-cli` can be leveraged directly via the `vmw-cli` shell command
 ```
 npm install vmw-cli --global
 ```
@@ -39,9 +41,7 @@ vmware-vsphere-integrated-containers
 vmware-vsphere-hypervisor-esxi
 vmware-vsphere-data-protection-advanced
 vmware-vsan
-
-<output ommitted>
-
+-- <output ommitted> --
 vmware-photon-platform
 vmware-nsx-t-data-center
 vmware-nsx-sd-wan
@@ -56,10 +56,10 @@ You will need to use one of the `<solution>` entries available from the `list` c
 The index intentionally creates duplicate entries for files, as a `product` may map to multiple `solutions`.  
 You can issue the `index` command multiple times to generate a consolidated index of all files.  
 
-**WARNING: Some solutions such as `vmware-vsphere` and `vmware-vsphere` contain a large number of products, and could take 10-15 mins to index**
+**WARNING: Some solutions such as `vmware-vsphere` and `vmware-vsan` contain a large number of products, and could take 10-15 mins to index**
 ```
 $ vmw-cli index vmware-nsx-t-data-center
-Updating [fileIndex.json] for all permitted downloads from [vmware-nsx-t-data-center] ...
+Updating [fileIndex.json] for all permitted downloads in [vmware-nsx-t-data-center] ...
 file[/state/index.json.session] does not exist, writing...
 Synching delicious cookies from [https://my.vmware.com]
 Offering up afforementioned snacks as a sacrifice to [https://my.vmware.com/oam/server/auth_cred_submit]
@@ -74,9 +74,7 @@ Resolving files in solution [vmware-nsx-t-data-center]
 [FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-213&productId=673
 [FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-212&productId=673
 [FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-2101&productId=673
-
-<output ommitted>
-
+-- <output ommitted> --
 [FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-OSS&productId=673
 [FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110&productId=631
 [FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-NSX&productId=631
