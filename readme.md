@@ -111,7 +111,7 @@ timer: 16230.838ms
 
 #### View files
 ```
-$ vmw-cli index OVFTOOL430
+$ vmw-cli find fileName:ovftool.*x86_64.bundle
 Loading available solutions in [fileIndex.json] ...
 solution                                   productGroup  productType      version  fileName                                        fileDate    fileSize  fileType  download  
 -----------------------------------------  ------------  ---------------  -------  ----------------------------------------------  ----------  --------  --------  --------  
