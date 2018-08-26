@@ -2,11 +2,16 @@
 `vmw-cli` is a CLI client used to login and interact with my.vmware.com.  
 It provides an interface for programmatic query and download of VMware product binaries.  
 
-#### Configure authentication for my.vmware.com
+Every product.  
+Every version.  
+Every file.  
+
+#### Configure authentication for my.vmware.com  
 ```
 export VMWUSER='<username>'
 export VMWPASS='<password>'
 ```
+Note: Any download attempts will be restricted to the entitlements afforded by your account.  
 
 ## Install
 `vmw-cli` can be installed natively via NPM or consumed using a pre-built docker image.
@@ -86,73 +91,45 @@ Merging [vmware-nsx-t-data-center] into [fileIndex.json] ...
 timer: 19227.940ms
 ```
 
+You can also issue the `index` command for a single `productGroup` if you provide the correct `productGroup` name.  
+Some examples of this usage are below.  
+
 ## Examples
-#### vmw-cli find lcp
+#### Index ovftool
 ```
-$ vmw-cli find lcp
-
-Index [allGroups.json] found - local load...
-solution                          productGroup   productType       version  fileName                                              fileDate    fileSize   fileType  
---------------------------------  -------------  ----------------  -------  ----------------------------------------------------  ----------  ---------  --------  
-vmware-pivotal-container-service  NSX-T-210      Product Binaries  2.1.0    nsx-lcp-2.1.0.0.0.7395497-esx65.zip                   2017-12-21  23.02 MB   zip       
-vmware-pivotal-container-service  NSX-T-210      Product Binaries  2.1.0    nsx-lcp-2.1.0.0.0.7395497-ubuntu-xenial_amd64.tar.gz  2017-12-21  45.27 MB   gz        
-vmware-pivotal-container-service  NSX-T-210      Product Binaries  2.1.0    nsx-lcp-2.1.0.0.0.7395497-rhel74_x86_64.tar.gz        2017-12-21  54.52 MB   gz        
-vmware-pivotal-container-service  NSX-T-210      Product Binaries  2.1.0    nsx-lcp-2.1.0.0.0.7395497-rhel73_x86_64.tar.gz        2017-12-21  54.46 MB   gz        
-vmware-nsx-t-data-center          NSX-T-220      Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-esx65.zip                   2018-06-05  26.87 MB   zip       
-vmware-nsx-t-data-center          NSX-T-220      Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-esx67.zip                   2018-06-05  25.88 MB   zip       
-vmware-nsx-t-data-center          NSX-T-220      Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-ubuntu-xenial_amd64.tar.gz  2018-06-05  119.36 MB  gz        
-vmware-nsx-t-data-center          NSX-T-220      Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-rhel74_x86_64.tar.gz        2018-06-05  59.94 MB   gz        
-vmware-nsx-t-data-center          NSX-T-110      Product Binaries  1.1.0    nsx-lcp-1.1.0.0.0.4788198-esx60.zip                   2017-02-02  16.58 MB   zip       
-vmware-nsx-t-data-center          NSX-T-110      Product Binaries  1.1.0    nsx-lcp-1.1.0.0.0.4788198-esx65.zip                   2017-02-02  15.57 MB   zip       
-vmware-nsx-t-data-center          NSX-T-110      Product Binaries  1.1.0    nsx-lcp-1.1.0.0.0.4788198-ubuntu-trusty_amd64.tar.gz  2017-02-02  38.46 MB   gz        
-vmware-nsx-t-data-center          NSX-T-110      Product Binaries  1.1.0    nsx-lcp-1.1.0.0.0.4788198-ubuntu-xenial_amd64.tar.gz  2017-02-02  37.85 MB   gz        
-vmware-nsx-t-data-center          NSX-T-110      Product Binaries  1.1.0    nsx-lcp-1.1.0.0.0.4788198-rhel71_x86_64.tar.gz        2017-02-02  46.35 MB   gz        
-vmware-nsx-t-data-center          NSX-T-110      Product Binaries  1.1.0    nsx-lcp-1.1.0.0.0.4788198-rhel72_x86_64.tar.gz        2017-02-02  46.38 MB   gz        
-vmware-nsx-cloud                  NSX-220-CLOUD  Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-esx65.zip                   2018-06-05  26.87 MB   zip       
-vmware-nsx-cloud                  NSX-220-CLOUD  Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-esx67.zip                   2018-06-05  25.88 MB   zip       
-vmware-nsx-cloud                  NSX-220-CLOUD  Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-ubuntu-xenial_amd64.tar.gz  2018-06-05  119.36 MB  gz        
-vmware-nsx-cloud                  NSX-220-CLOUD  Product Binaries  2.2.0    nsx-lcp-2.2.0.0.0.8680789-rhel74_x86_64.tar.gz        2018-06-05  59.94 MB   gz        
-[ 18/5435 ] entries - filter [ fileName:lcp ]
-Terminal size: 282x74
-```
-
-#### vmw-cli find fileName:ovftool,version:4.3.0
-```
-$ vmw-cli find fileName:ovftool,version:4.3.0
-
-Index [allGroups.json] found - local load...
-solution     productGroup  productType      version  fileName                                        fileDate    fileSize  fileType  
------------  ------------  ---------------  -------  ----------------------------------------------  ----------  --------  --------  
-vmware-vsan  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-win.i386.msi       2018-04-17  19.86 MB  msi       
-vmware-vsan  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-win.x86_64.msi     2018-04-17  23.80 MB  msi       
-vmware-vsan  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.i386.bundle    2018-04-17  33.42 MB  bundle    
-vmware-vsan  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    
-vmware-vsan  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-mac.x64.dmg        2018-04-17  18.25 MB  dmg       
-[ 5/5435 ] entries - filter [ fileName:ovftool,version:4.3.0 ]
-Terminal size: 282x74
-```
-
-#### vmw-cli find fileName:ovftool.*x86_64.bundle,version:4.3.0
-```
-$ vmw-cli find fileName:ovftool.*x86_64.bundle,version:4.3.0
-
-Index [allGroups.json] found - local load...
-solution     productGroup  productType      version  fileName                                        fileDate    fileSize  fileType  
------------  ------------  ---------------  -------  ----------------------------------------------  ----------  --------  --------  
-vmware-vsan  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    
-[ 1/5435 ] entries - filter [ fileName:ovftool.*x86_64.bundle,version:4.3.0 ]
-Terminal size: 282x74
-```
-
-#### vmw-cli get fileName:ovftool.*x86_64.bundle,version:4.3.0
-
-```
-$ vmw-cli get fileName:ovftool.*x86_64.bundle,version:4.3.0
-Index [allGroups.json] found - local load...
-file[/usr/lib/node_modules/vmw-cli/index.json.session] does not exist, writing...
+$ vmw-cli index OVFTOOL430
+Updating [fileIndex.json] for all permitted downloads in [OVFTOOL430] ...
+[mainIndex.json] downloading... [=================================================>] 100% 0.0s 351 KB/s 00.68/00.68 MB
+file[/usr/lib/node_modules/vmw-cli/lib/index.json.session] does not exist, writing...
 Synching delicious cookies from [https://my.vmware.com]
 Offering up afforementioned snacks as a sacrifice to [https://my.vmware.com/oam/server/auth_cred_submit]
 Pulling landing index.json [https://my.vmware.com/group/vmware/downloads]
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=OVFTOOL430&productId=734
+Merging [OVFTOOL430] into [fileIndex.json] ...
+timer: 16230.838ms
+```
+
+#### View files
+```
+$ vmw-cli index OVFTOOL430
+Loading available solutions in [fileIndex.json] ...
+solution                                   productGroup  productType      version  fileName                                        fileDate    fileSize  fileType  download  
+-----------------------------------------  ------------  ---------------  -------  ----------------------------------------------  ----------  --------  --------  --------  
+vmware-workspace-one                       OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+vmware-vsphere                             OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+vmware-vsphere-with-operations-management  OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+vmware-vsan                                OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+vmware-vcloud-nfv-openstack-edition        OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+vmware-horizon                             OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+vmware-horizon-apps                        OVFTOOL430    Drivers & Tools  4.3.0    VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle  2018-04-17  34.79 MB  bundle    yes       
+[ 7/35 ] entries - filter [ fileName:ovftool.*x86_64.bundle ]
+```
+
+#### Download ovftool
+```
+$ vmw-cli get VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle
+Loading available solutions in [fileIndex.json] ...
+Session file[/usr/lib/node_modules/vmw-cli/lib/index.json] [265] younger than [600] seconds...
 {
 	"name": "VMware OVF Tool for Linux 64-bit",
 	"fileName": "VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle",
@@ -168,13 +145,74 @@ Pulling landing index.json [https://my.vmware.com/group/vmware/downloads]
 		"downloadGroupCode": "OVFTOOL430",
 		"downloadFileId": "d0dd9006d720a26278b94591a4111457",
 		"vmware": "downloadBinary",
-		"baseStr": "",
-		"tagId": "9610",
-		"productId": "745",
+		"productId": "734"
 	}
 }
-[VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle] downloading... [=================================================>] 100% 0.0s 14393 KB/s 36.47/36.47 MB
+[VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle] downloading... [=================================================>] 100% 0.0s 337 KB/s 36.47/36.47 MB
 MD5 MATCH: local[ d0dd9006d720a26278b94591a4111457 ] remote [ d0dd9006d720a26278b94591a4111457 ]
+```
+
+#### Index NSX-T
+```
+$ vmw-cli index vmware-nsx-t-data-center
+Updating [fileIndex.json] for all permitted downloads in [vmware-nsx-t-data-center] ...
+Session file[/usr/lib/node_modules/vmw-cli/lib/index.json] [555] younger than [600] seconds...
+Resolving files in solution [vmware-nsx-t-data-center]
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-220&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-461-NSX&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRNI-380&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-212&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-PKS-2101&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRNI-380-OSS&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-461-OSS&productId=673
+-- <output omitted> --
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-OSS&productId=673
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-NSX&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110-OPENSTACK&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-430-OSS&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=VRLI-400-OSS&productId=631
+[FETCH]: https://my.vmware.com/group/vmware/details?downloadGroup=NSX-T-110-OSS&productId=631
+Merging [vmware-nsx-t-data-center] into [fileIndex.json] ...
+timer: 17695.387ms
+```
+
+#### View files
+```
+$ vmw-cli find fileName:unified,fileType:ova
+Loading available solutions in [fileIndex.json] ...
+solution                             productGroup  productType       version  fileName                                     fileDate    fileSize  fileType  download  
+-----------------------------------  ------------  ----------------  -------  -------------------------------------------  ----------  --------  --------  --------  
+vmware-vcloud-nfv-openstack-edition  NSX-T-220     Product Binaries  2.2.0    nsx-unified-appliance-2.2.0.0.0.8680778.ova  2018-06-05  3.52 GB   ova       yes       
+vmware-nsx-t-data-center             NSX-T-220     Product Binaries  2.2.0    nsx-unified-appliance-2.2.0.0.0.8680778.ova  2018-06-05  3.52 GB   ova       yes       
+[ 2/504 ] entries - filter [ fileName:unified,fileType:ova ]
+```
+
+#### Download unified-appliance
+```
+$ vmw-cli get nsx-unified-appliance-2.2.0.0.0.8680778.ova
+Loading available solutions in [fileIndex.json] ...
+Session file[/usr/lib/node_modules/vmw-cli/lib/index.json] [552] younger than [600] seconds...
+{
+	"name": "NSX Manager for VMware ESXi",
+	"fileName": "nsx-unified-appliance-2.2.0.0.0.8680778.ova",
+	"fileDate": "2018-06-05",
+	"fileSize": "3.52 GB",
+	"fileType": "ova",
+	"buildNum": "8680772",
+	"descr": "This is the NSX Manager Appliance in Open Virtualization Appliance Format (OVA)....",
+	"md5sum": "a4027f3a6b10c18f7ec4365720b348d0",
+	"sha1sum": "482e142d08cd14f2fef8ad2f39b36af3297af2cd",
+	"sha256sum": "e2620a14f14a7b43990f92ee98790c44c8217acc043d663abbef1cb6d798a0ac",
+	"download": {
+		"downloadGroupCode": "NSX-T-220",
+		"downloadFileId": "a4027f3a6b10c18f7ec4365720b348d0",
+		"vmware": "downloadBinary",
+		"productId": "673"
+	}
+}
+[nsx-unified-appliance-2.2.0.0.0.8680778.ova] downloading... [=================================================] 100% 0.0s 914 KB/s 03.78/03.78 GB
+MD5 MATCH: local[ a4027f3a6b10c18f7ec4365720b348d0 ] remote [ a4027f3a6b10c18f7ec4365720b348d0 ]
 ```
 
 ## License
