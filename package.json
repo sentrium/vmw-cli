@@ -1,6 +1,6 @@
 {
 	"name": "vmw-cli",
-	"version": "1.1.10",
+	"version": "1.1.11",
 	"description": "CLI interface for my.vmware.com",
 	"license": "MIT",
 	"repository": "apnex/vmw-cli",
@@ -31,7 +31,6 @@
 		"p-queue": "*",
 		"progress": "*",
 		"request": "*",
-		"request-promise": "*",
 		"tough-cookie-filestore": "*"
 	}
 }
