@@ -19,6 +19,7 @@ Alternatively, if using `docker` commands, you can pass credentials directly to 
 Requested files via the `get` command  will be downloaded to current working directory.
 
 ### via NPM
+**vmw-cli requires NodeJS >= 8.x, some older Linux distros need to have NodeJS [manually updated](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)**  
 Once installed, `vmw-cli` can be leveraged directly via the `vmw-cli` shell command - see *Usage* below
 ```
 npm install vmw-cli --global
@@ -30,9 +31,9 @@ This is where we simply use `docker run` with the required ENV parameters set:
 docker run -t --rm -e VMWUSER='<username>' -e VMWPASS='<password>' -v ${PWD}:/files apnex/vmw-cli <cmd>
 ```
 **Where:**  
-- `<username>` is your my.vmware.com username  
-- `<password>` is your my.vmware.com password  
-- `<cmd>` is one of [`list`, `index`, `find`, `get`]  
+- `<username>` is your **my.vmware.com** username  
+- `<password>` is your **my.vmware.com** password  
+- `<cmd>` is one of [`list`, `index`, `find`, `get`, `json`]  
 - `${PWD}` ENV will resolve to current working directory in BASH for file downloads
 
 See **Usage** for examples  
@@ -46,8 +47,8 @@ Start the container in background:
 docker run -itd --name vmw -e VMWUSER='<username>' -e VMWPASS='<password>' -v ${PWD}:/files --entrypoint=sh apnex/vmw-cli
 ```
 **Where:**  
-- `<username>` is your my.vmware.com username  
-- `<password>` is your my.vmware.com password  
+- `<username>` is your **my.vmware.com** username  
+- `<password>` is your **my.vmware.com** password  
 - `${PWD}` ENV will resolve to current working directory in BASH for file downloads
 
 Then issue one or more `docker exec` commands:
@@ -60,28 +61,20 @@ Clean up docker container when done:
 docker rm -f vmw
 ```
 
-Then issue one or more `docker exec` commands:
-
 See **Usage** for examples  
-
-Stand up the vmw-cli container running in background
-```
-```
 
 Index some files in `productGroup` *OVFTOOL430* and *NSX-T-220*
 ```
-docker exec -t vmw vmw-cli index OVFTOOL430
-docker exec -t vmw vmw-cli index NSX-T-220
+vmw-cli index OVFTOOL430
+vmw-cli index NSX-T-220
+vmw-cli get VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle
+vmw-cli get nsx-unified-appliance-2.2.0.0.0.8680778.ova
 ```
-docker exec -t vmw vmw-cli get VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle
-docker exec -t vmw vmw-cli get nsx-unified-appliance-2.2.0.0.0.8680778.ova
-docker rm -f vmw-cli
-
 
 ## Usage
 #### vmw-cli list
 The `list` command displays the current high-level `<solutions>` available on my.vmware.com.  
-You will need to first generate an index of files under at least 1 solution before proceeding with other commands.  
+You will need to first generate an index of files under at least 1 solution or productGroup before proceeding with other commands.  
 ```
 $ vmw-cli list
 vmware-workstation-pro
