@@ -12287,33 +12287,29 @@
 		}
 	},
 	"vmware-pivotal-container-service": {
-		"1.1": {
-			"NSX-T-210": "768",
-			"NSX-T-PKS-214": "768",
-			"NSX-T-PKS-213": "768",
-			"NSX-T-PKS-212": "768",
-			"NSX-T-PKS-2101": "768",
-			"NSX-T-210-OPENSTACK-OCATA": "768",
-			"NSX-T-210-OPENSTACK-PIKE": "768",
-			"NSX-T-210-SDK-PYTHON": "768",
-			"NSX-T-210-SDK-JAVA": "768",
-			"NSX-210-SPLUNK": "768",
-			"NSX-T-PKS-214-OSS": "768",
-			"NSX-T-210-OSS": "768"
-		},
-		"1.0": {
-			"NSX-T-210": "721",
-			"NSX-T-PKS-214": "721",
-			"NSX-T-PKS-213": "721",
-			"NSX-T-PKS-212": "721",
-			"NSX-T-PKS-2101": "721",
-			"NSX-T-210-OPENSTACK-OCATA": "721",
-			"NSX-T-210-OPENSTACK-PIKE": "721",
-			"NSX-T-210-SDK-PYTHON": "721",
-			"NSX-T-210-SDK-JAVA": "721",
-			"NSX-210-SPLUNK": "721",
-			"NSX-T-PKS-214-OSS": "721",
-			"NSX-T-210-OSS": "721"
+		"1.2": {
+			"NSX-T-230": "801",
+			"NSX-T-220": "801",
+			"NSX-T-230-OPENSTACK-PIKE": "801",
+			"NSX-T-230-OPENSTACK-QUEENS": "801",
+			"NSX-T-220-OPENSTACK-PIKE": "801",
+			"NSX-T-220-OPENSTACK-QUEENS": "801",
+			"NSX-T-230-SDK-JAVA": "801",
+			"NSX-T-230-SDK-PYTHON": "801",
+			"NSX-T-220-SDK-JAVA": "801",
+			"NSX-T-220-SDK-PYTHON": "801",
+			"NSX-T-230-SPLUNK": "801",
+			"NSX-T-220-SPLUNK": "801",
+			"NSX-T-230-CLOUDSCRIPT": "801",
+			"NSX-T-PKS-230": "801",
+			"NSX-T-PKS-221": "801",
+			"NSX-T-PKS-220": "801",
+			"NSX-T-230-TERRAFORM": "801",
+			"NSX-T-230-OSS": "801",
+			"NSX-T-PKS-230-OSS": "801",
+			"NSX-T-PKS-221-OSS": "801",
+			"NSX-T-PKS-220-OSS": "801",
+			"NSX-T-220-OSS": "801"
 		}
 	},
 	"vmware-photon-platform": {
